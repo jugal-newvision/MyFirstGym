@@ -19,7 +19,7 @@ const About = () => (
             <Spacer size={30} />
               <Text style ={styles.welcomeText} >Welcome!</Text>
               <Spacer size={10} />
-              <Text style ={styles.welcomeText} >Sign up and start exploring.</Text>
+              <Text style ={styles.normalText} >Sign up and start exploring.</Text>
           </View>
         </Content>
       </View>
@@ -36,6 +36,12 @@ const styles = StyleSheet.create({
   },
   welcomeText:{
     fontSize:45,
+    textAlign: 'center',
+    flex:1, 
+    color:'white',
+  },
+  normalText:{
+    fontSize:25,
     textAlign: 'center',
     flex:1, 
     color:'white',
