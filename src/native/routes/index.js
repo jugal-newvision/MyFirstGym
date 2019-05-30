@@ -29,6 +29,51 @@ import AboutComponent from '../components/About';
 const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
+    {/* <Stack
+          key="home"
+          title={AppConfig.appName.toUpperCase()}
+          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
+          {...DefaultProps.navbarProps}
+        > */}
+          <Scene key="home" component={AboutComponent} />
+        {/* </Stack> */}
+        <Stack
+          key="login"
+          title="Welcome to Login"
+        >
+        <Scene
+            back
+            key="login"
+            {...DefaultProps.navbarProps}
+            component={LoginContainer}
+            Layout={LoginComponent}
+          />
+          </Stack>
+          <Stack
+            key="signUp"
+            title="Welcome to Sign Up"
+          >
+          <Scene
+              back
+              key="signUp"
+              {...DefaultProps.navbarProps}
+              component={SignUpContainer}
+              Layout={SignUpComponent}
+            />
+          </Stack>
+          <Stack
+            key="profile"
+            title="Welcome to profile"
+          >
+          <Scene
+              back
+              key="profile"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={ProfileComponent}
+            />
+          </Stack>
+
       <Tabs
         key="tabbar"
         swipeEnabled
@@ -37,15 +82,6 @@ const Index = (
         {...DefaultProps.tabProps}
       >
         <Stack
-          key="home"
-          title={AppConfig.appName.toUpperCase()}
-          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
-          {...DefaultProps.navbarProps}
-        >
-          <Scene key="home" component={AboutComponent} />
-        </Stack>
-
-        <Stack
           key="recipes"
           title="RECIPES"
           icon={() => <Icon name="book" {...DefaultProps.icons} />}
@@ -53,13 +89,13 @@ const Index = (
         >
           <Scene key="recipes" component={RecipesContainer} Layout={RecipeListingComponent} />
         </Stack>
-
         <Stack
           key="profile"
           title="PROFILE"
           icon={() => <Icon name="contact" {...DefaultProps.icons} />}
           {...DefaultProps.navbarProps}
         >
+          
           <Scene key="profileHome" component={MemberContainer} Layout={ProfileComponent} />
           <Scene
             back

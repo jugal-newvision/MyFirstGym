@@ -47,11 +47,11 @@ export default class App extends React.Component {
             loading={<Loading />}
             persistor={persistor}
           >
-            <StyleProvider style={getTheme(theme)}>
+            <StyleProvider style={getTheme(theme) }>
               <Router>
-                <Stack key="root">
+                 <Stack key="root"> 
                   {Routes}
-                </Stack>
+                 </Stack> 
               </Router>
             </StyleProvider>
           </PersistGate>

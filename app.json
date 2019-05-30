@@ -15,8 +15,8 @@
     "icon": "./src/images/app-icon.png",
     "splash": {
       "image": "./src/images/launch.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#473be7"
+      "resizeMode": "cover",
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
