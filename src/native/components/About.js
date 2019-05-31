@@ -29,7 +29,7 @@ const About = () => (
                 <Text style={styles.loginButtonText}> Login </Text>
               </Button>
               <Spacer size={15} />
-              <Button block style ={styles.buttonStyleTransparent} onPress={Actions.profile} >
+              <Button block style ={styles.buttonStyleTransparent} onPress={Actions.main} >
                 <Text style={styles.transparentButtonText}> Continue as a guest </Text>
               </Button>
               <Spacer size={10} />

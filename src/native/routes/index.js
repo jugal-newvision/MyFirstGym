@@ -25,18 +25,15 @@ import MemberContainer from '../../containers/Member';
 import ProfileComponent from '../components/User/Profile';
 
 import AboutComponent from '../components/About';
+import MainComponent from '../components/User/Main';
+
+import ExploreComponent from '../components/User/explore';
+import ScheduleComponent from '../components/User/Schedule';
 
 const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
-    {/* <Stack
-          key="home"
-          title={AppConfig.appName.toUpperCase()}
-          icon={() => <Icon name="planet" {...DefaultProps.icons} />}
-          {...DefaultProps.navbarProps}
-        > */}
-          <Scene key="home" component={AboutComponent} />
-        {/* </Stack> */}
+   <Scene key="home" component={AboutComponent} />
         <Stack
           key="login"
           title="Welcome to Login"
@@ -47,7 +44,7 @@ const Index = (
             {...DefaultProps.navbarProps}
             component={LoginContainer}
             Layout={LoginComponent}
-          />
+          /> 
           </Stack>
           <Stack
             key="signUp"
@@ -72,15 +69,72 @@ const Index = (
               component={MemberContainer}
               Layout={ProfileComponent}
             />
+            
           </Stack>
-
+          <Stack
+            key="main"
+            title="Home"
+            style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
+            icon={() => <Icon name="book" {...DefaultProps.icons} />}
+            {...DefaultProps.navbarProps}
+          >
+          <Scene
+              key="main"
+              style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={MainComponent}
+             
+            /><Scene
+            key="explore"
+            title="Explore"
+            component={MemberContainer}
+            Layout={ExploreComponent}
+          />
+          <Scene
+            key="schedule"
+            title="Schedule"
+            component={MemberContainer}
+            Layout={ScheduleComponent}
+          />
+          </Stack>
       <Tabs
         key="tabbar"
         swipeEnabled
         type="replace"
+        style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
         showLabel={false}
         {...DefaultProps.tabProps}
+
       >
+        <Stack
+            key="main"
+            title="Home"
+            style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
+            icon={() => <Icon name="book" {...DefaultProps.icons} />}
+            {...DefaultProps.navbarProps}
+          >
+          <Scene
+              key="main"
+              style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={MainComponent}
+             
+            />
+            <Scene
+              key="explore"
+              title="Explore"
+              component={MemberContainer}
+              Layout={ExploreComponent}
+            />
+            <Scene
+              key="schedule"
+              title="Schedule"
+              component={MemberContainer}
+              Layout={ScheduleComponent}
+            />
+            </Stack>
         <Stack
           key="recipes"
           title="RECIPES"
