@@ -1,61 +1,92 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
-import {
-  Container, Content, List, ListItem, Body, Left, Text, Icon, Button,
-} from 'native-base';
+import { View, StyleSheet  } from 'react-native';
+import {Container, Content, List, ListItem, Body, Left, Text, Button} from 'native-base';
+import {Icon} from 'react-native-elements';
 import Spacer from '../UI/Spacer';
-
-
-
-const Schedule = () => (
-  <Container>
-    <Content>
-    <View>
-              <Spacer size={10} />
-              <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
-                <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2}}>
+import { Actions } from 'react-native-router-flux';
+const x=10;
+const Schedule = ({ member, logout }) => (
+   <Container style={{flex:1,flexDirection:'row', alignItems:'center',justifyContent:'center',}}>
+     <Content  >
+    {(member && member.email)
+          ?(
+      <List>
+        
+          <View style ={{alignContent:'center'}}>
+            <Spacer size={10} />
+            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
+              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
                 <Body  >
                   <Text >11:00 AM</Text>
                 </Body>
-                </Left>
-                <Left>
+              </Left>
+              <Left style ={{ width:'35%'}}>
+                <Body  >
                   <View>
-                    <Text style ={{fontSize:12}}>Stars Artistic</Text>
-                    <Text style ={{fontSize:12}} >Gymnastic</Text>
+                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
+                    <Text style ={{fontSize:8}} >Gymnastic</Text>
                   </View>
-                  <View>
-                    <Button style ={{backgroundColor:'green',margin:5,borderRadius:50}}  ><Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text></Button>
+                </Body>
+              </Left>
+              <Left style ={{ width:'40%'}}>
+                  <Body style ={{width:'100%'}}>
+                  <View style ={{width:'100%'}}>
+                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
+                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
+                    </Button>
                   </View>
-                </Left>
-                <Left>
-                <Body>
-                  
                 </Body>
-                </Left>
-                </ListItem>
-                <ListItem  icon>
-                <Left>
+              </Left>
+              <Left style ={{ width:'10%',alignItems:'center'}}>
                 <Body>
-                <Text>11:00 AM</Text>
+                  <View style ={{alignContent:'flex-end'}}>
+                   <Icon name='navigation' />
+                  </ View>
                 </Body>
-                </Left>
-                <Left>
-                <Body>
-                <Text>11:00 AM</Text>
-                </Body>
-                </Left>
-                <Left>
-                <Body>
-                <Text>11:00 AM</Text>
-                </Body>
-                </Left>
-                </ListItem>
-                
+              </Left>
+            </ListItem>       
+          </View>
+      </List>
+      )
+      : (
+      
+          <View style ={styles.content}> 
+                <Text style = {{fontWeight:'bold', fontSize:16, textAlign:'center', flex:0.8, margin:0}}>Keep track of where you're going.</Text>
+                <Spacer size={10} />
+                <Text style={{textAlign:'center', flex:0.8, margin:0, color:'#827b7b'}}>Easily access all your upcoming events.</Text>
+                <Spacer size={20} />
+                <Button block style ={styles.buttonStyle} onPress={Actions.login}>
+                    <Text style={styles.loginButtonText}> Login </Text>
+                </Button>
             </View>
-    </Content>
-  </Container>
+         )
+        }
+     </Content>
+   </Container>
 
 );
+const styles = StyleSheet.create({
 
-
+  buttonStyle:{
+    backgroundColor:'transparent',
+    borderRadius:4,
+    borderWidth:1,
+    flex:0.8,
+    width:'80%',
+    marginLeft:'10%',
+    borderColor:'#000000',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  loginButtonText:{
+    color:'#000000',
+    fontSize:12
+  },
+  content:{
+    textAlign:'center',
+    alignItems:'center',
+    margin:0,
+    flex:1,
+},
+});
 export default Schedule;

@@ -9,14 +9,14 @@ import Spacer from './UI/Spacer';
 import { blue, bold, white } from 'ansi-colors';
 import { Actions } from 'react-native-router-flux';
 import Hr from './UI/Hr';
-//import Firebase from './../../firebase/firebase'
+import firebase from './../../firebase/firebase'  
 
 const About = () => (
   <Container>
       <View style ={{backgroundColor:'#2eaaeb',flex:1, justifyContent: 'center',
                 alignItems: 'center',alignContent:'center'}}>
         <Content>
-          {/* <Firebase /> */}
+   
           <View >
           <Spacer size={100} />
             <Image source ={require('../../images/app-icon.png')} />

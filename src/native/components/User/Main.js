@@ -59,7 +59,7 @@ render() {
             <Slideshow style={styles.imgStyle}
                 dataSource={this.state.dataSource}
                 position={this.state.position}
-                arrowSize={'0px'}
+                arrowSize={0}
                 onPositionChanged={position => this.setState({ position })} />
               <Spacer size={10} />
               <View style ={styles.adStyle}>

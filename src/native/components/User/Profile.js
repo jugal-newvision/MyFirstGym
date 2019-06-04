@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import {
-  Container, Content, List, ListItem, Body, Left, Text, Icon,
+  Container, Content, List, ListItem, Body, Left, Text,
 } from 'native-base';
+import { Icon } from 'react-native-elements'
 import { Actions } from 'react-native-router-flux';
 import Header from '../UI/Header';
 

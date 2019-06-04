@@ -29,6 +29,7 @@ import MainComponent from '../components/User/Main';
 
 import ExploreComponent from '../components/User/explore';
 import ScheduleComponent from '../components/User/Schedule';
+import FavouriteComponent from '../components/User/favourite';
 
 const Index = (
   <Stack hideNavBar>
@@ -85,17 +86,24 @@ const Index = (
               component={MemberContainer}
               Layout={MainComponent}
              
-            /><Scene
-            key="explore"
-            title="Explore"
-            component={MemberContainer}
-            Layout={ExploreComponent}
+            />
+            <Scene
+              key="explore"
+              title="Explore"
+              component={MemberContainer}
+              Layout={ExploreComponent}
           />
           <Scene
             key="schedule"
             title="Schedule"
             component={MemberContainer}
             Layout={ScheduleComponent}
+          />
+          <Scene
+            key="favourite"
+            title="Favourites"
+            component={MemberContainer}
+            Layout={FavouriteComponent}
           />
           </Stack>
       <Tabs
