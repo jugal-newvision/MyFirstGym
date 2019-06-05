@@ -19,7 +19,7 @@ const About = () => (
    
           <View >
           <Spacer size={100} />
-            <Image source ={require('../../images/app-icon.png')} />
+            <Image  source ={require('../../images/app-icon.png')} />
             <Spacer size={20} />
               <Text style ={styles.welcomeText} >Welcome!</Text>
               <Spacer size={5} />
@@ -29,7 +29,7 @@ const About = () => (
                 <Text style={styles.loginButtonText}> Login </Text>
               </Button>
               <Spacer size={15} />
-              <Button block style ={styles.buttonStyleTransparent} onPress={Actions.main} >
+              <Button block style ={styles.buttonStyleTransparent} onPress={Actions.profile} >
                 <Text style={styles.transparentButtonText}> Continue as a guest </Text>
               </Button>
               <Spacer size={10} />

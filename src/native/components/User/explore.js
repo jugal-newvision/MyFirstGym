@@ -9,9 +9,8 @@ import {
 const Explore = () => (
   <Container>
     <Content>
-
             <View>
-                <Text>Hello Explore</Text>
+                <Text>Hello Explore1</Text>
             </View>
     </Content>
   </Container>

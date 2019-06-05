@@ -35,6 +35,16 @@ const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
    <Scene key="home" component={AboutComponent} />
+
+
+          <Scene
+            back
+            key="forgotPassword"
+            {...DefaultProps.navbarProps}
+            component={ForgotPasswordContainer}
+            Layout={ForgotPasswordComponent}
+          />
+
         <Stack
           key="login"
           title="Welcome to Login"
@@ -49,7 +59,7 @@ const Index = (
           </Stack>
           <Stack
             key="signUp"
-            title="Welcome to Sign Up"
+            title="Sign Up"
           >
           <Scene
               back
@@ -61,7 +71,7 @@ const Index = (
           </Stack>
           <Stack
             key="profile"
-            title="Welcome to profile"
+            title="Profile"
           >
           <Scene
               back
@@ -72,6 +82,8 @@ const Index = (
             />
             
           </Stack>
+         
+
           <Stack
             key="main"
             title="Home"
@@ -105,6 +117,9 @@ const Index = (
             component={MemberContainer}
             Layout={FavouriteComponent}
           />
+
+          
+
           </Stack>
       <Tabs
         key="tabbar"

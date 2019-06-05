@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import {
   Container, Content, Form, Item, Label, Input, Text, Button, View,
 } from 'native-base';
+
+import {Image, StyleSheet} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Messages from '../UI/Messages';
-import Header from '../UI/Header';
 import Spacer from '../UI/Spacer';
 
 class Login extends React.Component {
@@ -52,48 +53,99 @@ class Login extends React.Component {
 
     return (
       <Container>
+         <View style ={{backgroundColor:'#2eaaeb',flex:1, justifyContent: 'center',
+                alignItems: 'center',alignContent:'center', textAlign:'center'}}>
         <Content>
-          <View padder>
-            <Header
-              title="Welcome"
-              content="Please enter your email and password to login."
-            />
-            {error && <Messages message={error} />}
-            {success && <Messages type="success" message={success} />}
-          </View>
-
-          <Form>
-            <Item stackedLabel>
-              <Label>Email</Label>
-              <Input
-                autoCapitalize="none"
-                value={email}
-                keyboardType="email-address"
-                disabled={loading}
-                onChangeText={v => this.handleChange('email', v)}
-              />
-            </Item>
-            <Item stackedLabel>
-              <Label>Password</Label>
-              <Input
-                secureTextEntry
-                disabled={loading}
-                onChangeText={v => this.handleChange('password', v)}
-              />
-            </Item>
-
+            <Spacer  size = {20}/>
+            <Image style = {{alignSelf:'center'}} source ={require('../../../images/app-icon.png')} />
             <Spacer size={20} />
-
+            <Text style ={styles.welcomeText} >Welcome!</Text>
+            <Spacer size={5} />
+            <Text style ={styles.normalText} >Sign up and start exploring.</Text>
+            <Spacer size={30} />
             <View padder>
-              <Button block onPress={this.handleSubmit} disabled={loading}>
-                <Text>{loading ? 'Loading' : 'Login' }</Text>
-              </Button>
+              {error && <Messages message={error} />}
+              {success && <Messages type="success" message={success} />}
             </View>
-          </Form>
+            <Form>
+              <Item stackedLabel style={{width:'90%'}}>
+                <Input
+                  style={{color:'#ffffff', textAlignVertical:'bottom'}}
+                  placeholderTextColor="#ffffff"
+                  autoCapitalize="none"
+                  placeholder = 'Username or E-mail'
+                  value={email}
+                  keyboardType="email-address"
+                  disabled={loading}
+                  onChangeText={v => this.handleChange('email', v)}
+                />
+              </Item>
+              <Item stackedLabel style={{width:'90%'}}  >
+                <Input
+                  style={{color:'#ffffff', textAlignVertical:'bottom'}}
+                  placeholderTextColor="#ffffff"
+                  secureTextEntry
+                  placeholder = 'Password'
+                  disabled={loading}
+                  onChangeText={v => this.handleChange('password', v)}
+                />
+                  <Text onPress={Actions.forgotPassword} style ={styles.labelForgetColor} >Forget Password?</Text>
+              </Item>
+              
+              <Spacer size={20} />
+              <View padder>
+                <Button block style ={styles.buttonStyle} onPress={this.handleSubmit} disabled={loading}>
+                  <Text style={styles.loginButtonText}> {loading ? 'Loading' : 'Login' } </Text>
+                </Button>
+              </View>
+            </Form>
         </Content>
+        </View>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+
+  labelColor:{
+    color:'#ffffff'
+  },
+  labelForgetColor:{
+    color:'#ffffff',
+    flex:1,
+    textAlign:'right',
+    position:'absolute',
+    right:5,
+    bottom:2,
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: 'bold',
+  },
+  welcomeText:{
+    fontSize:30,
+    textAlign: 'center',
+    flex:1, 
+    color:'white',
+  },
+  normalText:{
+    fontSize:12,
+    textAlign: 'center',
+    flex:1, 
+    color:'white',
+  },
+  buttonStyle:{
+    backgroundColor:'white',
+    borderWidth:1,
+    borderRadius:4,
+    borderColor:'#ffffff'
+  },
+
+  loginButtonText:{
+    color:'#2eaaeb',
+    fontSize:12
+  }
+});
 
 export default Login;
