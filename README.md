@@ -1,81 +1,113 @@
-# React Native Starter 🚀
+<img src="/docs/rnsk-logo.jpg" alt="React Native Starter Kit" width="400" />
 
-*You're viewing the new and updated version of React Native Starter, previous version can be found under the [v1 branch](https://github.com/flatlogic/react-native-starter/tree/v1)*
+[![GitHub tag](https://img.shields.io/github/tag/mcnamee/react-native-starter-kit.svg?style=flat-square)](https://github.com/mcnamee/react-native-starter-kit/tags)
+[![GitHub contributors](https://img.shields.io/github/contributors/mcnamee/react-native-starter-kit.svg?style=flat-square)](https://github.com/mcnamee/react-native-starter-kit/contributors)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/mcnamee/react-native-starter-kit/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/mcnamee/react-native-starter-kit.svg?style=flat-square)](https://github.com/mcnamee/react-native-starter-kit/issues)
+[![GitHub closed issues](https://img.shields.io/github/issues-closed/mcnamee/react-native-starter-kit.svg?style=flat-square)](https://github.com/mcnamee/react-native-starter-kit/issues-closed)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr/mcnamee/react-native-starter-kit.svg?style=flat-square)](https://github.com/mcnamee/react-native-starter-kit/issues-pr)
 
-A powerful react native starter template that bootstraps development of your mobile application. React Native Starter is a mobile application template with lots of built-in components like sidebar, navigation, form elements, etc - all you need to start building your mobile app faster. Check out live demo on [App Store](https://play.google.com/store/apps/details?id=com.reactnativestarter.lite), [Google Play](https://play.google.com/store/apps/details?id=com.reactnativestarter.app).
+---
 
-![React Native Starter](https://i.imgur.com/vcz4bU6.png)
+[![CryptoTip](https://img.shields.io/badge/Donate%20with-CryptoTip-blue.svg?style=flat&colorB=007bff)](https://cryptotip.it/p/mcnamee)  [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=U7CE3LJYX859E)
 
-<a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.lite&pcampaignid=Github-OS-Repo'><img width="200" alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png'/></a>
-<a href='https://play.google.com/store/apps/details?id=com.reactnativestarter.lite&pcampaignid=Github-OS-Repo'><img width="200" alt='Download on App Store' src='https://i.imgur.com/7IxtMV0.png'/></a>
+# React (Web + Native) Starter Kit
 
-## What's inside
+#### For when you're looking to build 'the next big thing' for both web and native mobile.
 
-- Always up-to-date React Native scaffolding
-- UI/UX Design from industry experts
-- Modular and well-documented structure for application code
-- Redux for state management
-- React Navigation for simple navigation
-- Disk-persisted application state caching
-- More than 16 Ready-to-use Pages
+<a href="http://react-boilerplate.mcnam.ee/"><img src="/docs/web-demo.jpg" alt="Web Demo" height="50" /></a>
+<a href="https://expo.io/@mcnamee/react-native-starter-kit"><img src="/docs/expo-demo.jpg" alt="React Native Expo Demo" height="50" /></a>
 
-## Getting Started
+---
+
+## 👋 Intro
+
+This boilerplate launches with a [React web app](https://reactjs.org/) and [React Native app](https://facebook.github.io/react-native/) sharing a single code base. It shares the 'business logic' (_i.e. actions, containers, reducers_) across the platforms, whilst allowing flexibility in View components to ensure your project looks and feels native in each platform.
+
+The project is _super_ helpful to kick-start your next project, as it provides a lot of the common tools you may reach for, all ready to go. Specifically:
+
+- A shared React and React Native structure
+- __Flux architecture__
+    - [Redux](https://redux.js.org/docs/introduction/)
+- __Routing and navigation__
+    - [React Native Router Flux](https://github.com/aksonov/react-native-router-flux) for native mobile
+    - [React Router](https://github.com/ReactTraining/react-router) for web
+- __Data Caching / Offline__
+    - [Redux Persist](https://github.com/rt2zz/redux-persist)
+- __UI Toolkit/s__
+    - [Native Base](https://nativebase.io/) for native mobile
+    - [Bootstrap](https://getbootstrap.com/) for web
+- __Simpler mobile app development__ through
+    - [Expo](https://expo.io/)
+- __User authentication__ example through
+    - [Firebase](https://firebase.google.com/)
+- __API/Data example__
+    - Shows how to read/write data from/to an external API (in our case, [Firebase](https://firebase.google.com/))
+- __Code Linting__ with
+    - [Airbnb's JS Linting](https://github.com/airbnb/javascript) guidelines
+
+---
+
+## 📖 Docs
+
+- [Setup your own Firebase](/docs/firebase.md)
+- [Understanding the file structure](/docs/file-structure.md)
+- [FAQs & Opinions](/docs/faqs.md)
+- [Testing, Deploying & Publishing](/docs/publishing.md)
+- [Tests & testing](/docs/testing.md) (coming soon...)
+- [Contributing to this project](/docs/contributing.md)
+
+---
+
+## 🚀 Getting Started
 
 #### 1. Clone and Install
 
+_*It's recommended that you install [React Native Debugger](https://github.com/jhen0409/react-native-debugger/releases) and open before `yarn start`._
+
 ```bash
 # Clone the repo
-git clone https://github.com/flatlogic/react-native-starter.git
+git clone https://github.com/mcnamee/react-native-starter-kit.git
 
 # Install dependencies
 yarn install
 ```
 
-#### 2. Open RNS in your iOS simulator
+#### 2.1. Run the _React Native_ App
 
-Run this command to start the development server and to start your app on iOS simulator:
-```
-yarn run:ios
-```
-
-Or, if you prefer Android:
-```
-yarn run:android
+```bash
+# Start the React Native packager
+yarn start
 ```
 
-That's it! Cool, right?
+Instructions are shown in the terminal. You can select to open it in:
 
-## Documentation
+- An emulator (either iOS or Android)
+- Your mobile device with the [Expo app](https://expo.io/). It will reload if you save edits to your files and you will see build errors and logs in the terminal.
 
-Our handy documentation can be found on official RNS website: https://docs.reactnativestarter.com 
+#### 2.2. Run the _Web_ App
 
-## Contributing
+```bash
+# Starts are local live-reload server at:
+# http://localhost:3001
+yarn run web
+```
 
-If you find any problems, please [open an issue](https://github.com/flatlogic/react-native-starter/issues/new) or submit a fix as a pull request.
+Via webpack, starts a localhost server on port 3001 [http://localhost:3001](http://localhost:3001).
 
-## Want more?
+- Save code and it auto refreshes
+- Install [Redux DevTools](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) into Chrome to see the state of Redux
 
-We have a premium version of this mobile application template that saves you even more time and money and comes with advanced features:
-- Premium RED color scheme
-- More than 5 additional screens (such as chat, profile, product item, etc.)
-- Contains an extended charting library to visualize all the data you need
-- Premium support and updates included
-- Much, much more..
+---
 
-Read more and purchase it at https://reactnativestarter.com
+## 👊 Further Help?
 
-## How can I support developers?
-- Star our GitHub repo :star:
-- [Tweet about it](https://twitter.com/intent/tweet?text=Amazing%20Mobile%20Application%20Template%20built%20with%20React%20Native!&url=https://github.com/flatlogic/react-native-starter&via=flatlogic).
-- Create pull requests, submit bugs, suggest new features or documentation updates :wrench:
-- Follow [@flatlogic on Twitter](https://twitter.com/flatlogic).
-- Subscribe to React Native Starter newsletter at [reactnativestarter.com](https://reactnativestarter.com/)
-- Like our page on [Facebook](https://www.facebook.com/flatlogic/) :thumbsup:
+This repo is a great place to start, but if you'd prefer to sit back and have your new project built for you, [get in touch with me directly](https://mcnam.ee) and I can organise a quote.
 
-## More from Flatlogic
-- [✔️Awesome Bootstrap Checkboxes & Radios](https://github.com/flatlogic/awesome-bootstrap-checkbox) - Pure css way to make inputs look prettier
-- [💥Sing App Dashboard](https://github.com/flatlogic/sing-app) - Free and open-source admin dashboard template built with Bootstrap 4 
+---
 
-## License
+## 💡 Inspiration
 
-[Mozilla Public License 2.0](LICENSE)
+- [This blog post](http://jkaufman.io/react-web-native-codesharing/) helped put the ideas into action
+
+_If there's any other ideas presented in this repo, that you think worth mentioning - feel free open a pull request :)_

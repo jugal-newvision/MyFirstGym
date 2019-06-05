@@ -45,8 +45,6 @@
     "react-native-image-slider": "^2.0.3",
     "react-native-router-flux": "4.0.6",
     "react-native-slideshow": "^1.0.1",
-    "react-native-snap-carousel": "^3.8.0",
-    "react-navigation": "^3.11.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.2.2",
     "react-timer-mixin": "^0.13.4",
@@ -63,7 +61,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
     "gh-pages": "^2.0.1",
-    "jest-expo": "^33.0.0",
+    "jest-expo": "^33.0.1",
     "node-sass": "^4.11.0",
     "react-scripts": "^3.0.1"
   }

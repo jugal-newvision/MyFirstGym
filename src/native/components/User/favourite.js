@@ -11,7 +11,6 @@ const Favorite = ({ member, logout }) => (
     {(member && member.email)
           ?(
       <List>
-        
           <View style ={{alignContent:'center'}}>
             <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
