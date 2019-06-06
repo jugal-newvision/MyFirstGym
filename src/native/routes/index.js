@@ -30,6 +30,7 @@ import MainComponent from '../components/User/Main';
 import ExploreComponent from '../components/User/explore';
 import ScheduleComponent from '../components/User/Schedule';
 import FavouriteComponent from '../components/User/favourite';
+import Mycard from '../components/User/myCard';
 
 const Index = (
   <Stack hideNavBar>
@@ -82,7 +83,19 @@ const Index = (
             />
             
           </Stack>
-         
+          <Stack
+            key="mycard"
+            title="My Card"
+          >
+          <Scene
+              back
+              key="mycard"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={Mycard}
+            />
+            
+          </Stack>
 
           <Stack
             key="main"
@@ -206,6 +219,14 @@ const Index = (
             component={UpdateProfileContainer}
             Layout={UpdateProfileComponent}
           />
+          <Scene
+              back
+              key="mycard"
+              title="My Card"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={Mycard}
+            />
         </Stack>
       </Tabs>
     </Scene>

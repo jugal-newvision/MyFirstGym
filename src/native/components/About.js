@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor:'white',
   },
   buttonStyleTransparent:{
-    backgroundColor:'transparent',
+    backgroundColor:'#2eaaeb',
     borderRadius: 0,
     borderWidth: 1,
     borderColor: '#ffffff',
