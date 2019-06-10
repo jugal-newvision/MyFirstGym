@@ -2,9 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Image, StyleSheet,  } from 'react-native';
 import Barcode from 'react-native-barcode-builder';
-import {
-  Container, Content,Text
-} from 'native-base';
+import {Container, Content,Text} from 'native-base';
 import Spacer from '../UI/Spacer';
 
 const Mycard = ({ member, logout }) => (

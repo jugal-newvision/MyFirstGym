@@ -12,16 +12,19 @@ const Profile = ({ member, logout }) => (
   <Container>
     <View style ={{flex:1, textAlign:'center'}}>
     <Content>
-         {(member && member.email)
+         {/* {(member && member.email) */}
+         {(1)
           ? (
             <View style ={{marginBottom:50}}>
               <View style = {{ backgroundColor:'#ffffff', position:'relative',width:'90%', alignSelf:'center', marginTop:70}}>
                 <Image  style = {styles.profileImage} source = {require('../../../images/image-2.jpg')} />
                 <View style ={{marginTop:60, flexDirection:'row', flexWrap:'wrap', textAlign:'center', alignSelf:'center'}}>
                   <Text style ={styles.profileName}>Janet Walker</Text>
-                  <View onPress={Actions.login}  style={styles.cardIcon}>
-                      <Image style={styles.cardIcon}  source = {require('../../../images/card.png')}/>
-                  </View>
+                  <TouchableHighlight onPress={Actions.creditcard} style={styles.cardIcon} underlayColor="white">
+                    <View>
+                        <Image style={styles.cardIcon}  source = {require('../../../images/card.png')}/>
+                    </View>
+                  </TouchableHighlight>
                 </View>
 
                 <View style ={{alignSelf:'center', textAlign:'center'}}>
@@ -40,62 +43,76 @@ const Profile = ({ member, logout }) => (
             </View>
             <View style = {{ position:'relative',width:'90%', alignSelf:'center', marginTop:0}}>
               <View style={{flexDirection:'row',flex:1, marginTop:10, marginBottom:0, marginRight:10, marginLeft:10}}>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-classes.png')}/>
-                  <Text style={styles.balanceText}>My Classes</Text>
-                </View>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-waitlist.png')}/>
-                  <Text style={styles.balanceText}>My Waitlists</Text>
-                </View>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-attendance.png')}/>
-                  <Text style={styles.balanceText}>My Attendance</Text>
-                </View>
+              <TouchableHighlight style={styles.viewColumnStyle} underlayColor="white">
+                  <View>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-classes.png')}/>
+                    <Text style={styles.balanceText} >My Classes</Text>
+                  </View>
+                </TouchableHighlight>
+                <TouchableHighlight style={styles.viewColumnStyle} underlayColor="white">
+                  <View>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-waitlist.png')}/>
+                    <Text style={styles.balanceText}>My Waitlists</Text>
+                  </View>
+                </TouchableHighlight>
+                <TouchableHighlight style={styles.viewColumnStyle} underlayColor="white">
+                  <View>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-attendance.png')}/>
+                    <Text style={styles.balanceText}>My Attendance</Text>
+                  </View>
+                </TouchableHighlight>
               </View>
               <View style={{flexDirection:'row',flex:1, margin:10}}>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-purchase.png')}/>
-                  <Text style={styles.balanceText}>My Purchases</Text>
-                </View>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-account.png')}/>
-                  <Text style={styles.balanceText}>My Account</Text>
-                </View>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-points.png')}/>
-                  <Text style={styles.balanceText}>My Points</Text>
-                </View>
+              <TouchableHighlight style={styles.viewColumnStyle} underlayColor="white">
+                  <View>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-purchase.png')}/>
+                    <Text style={styles.balanceText}>My Purchases</Text>
+                  </View>
+                </TouchableHighlight>
+                <TouchableHighlight style={styles.viewColumnStyle} underlayColor="white" onPress={Actions.account}>
+                  <View>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-account.png')}/>
+                    <Text style={styles.balanceText}>My Account</Text>
+                  </View>
+                </TouchableHighlight>
+                <TouchableHighlight style={styles.viewColumnStyle} underlayColor="white" onPress={Actions.mypoints}>
+                  <View>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-points.png')}/>
+                    <Text style={styles.balanceText}>My Points</Text>
+                  </View>
+                </TouchableHighlight>
               </View>
             </View>
             <View style = {[styles.rootView, styles.inlineView]}>
                       <Image style={styles.settingcardIcon}  source = {require('../../../images/buy-services.png')}/>
                       <Text style ={styles.settingText}>Buy Services</Text>
             </View>
-            <View style = {[styles.rootView, styles.inlineView]}>
-                      <Image style={styles.settingcardIcon}  source = {require('../../../images/setting.png')}/>
-                      <Text style ={styles.settingText}>Setting</Text>
-            </View>
+            <TouchableHighlight style={[styles.rootView]} underlayColor="white" onPress={Actions.setting}>
+              <View style = {styles.inlineView}>
+                  <Image style={styles.settingcardIcon}  source = {require('../../../images/setting.png')}/>
+                  <Text style ={styles.settingText}>Setting</Text>
+              </View>
+            </TouchableHighlight>
           </View>
           )
           : (
             <View style ={{marginBottom:50}}>
               <View style = {{minHeight:150, backgroundColor:'#ffffff', position:'relative',width:'90%', alignSelf:'center', marginTop:70}}>
                 <Image  style = {styles.profileImage} source = {require('../../../images/profile-1.png')} />
-                  <Button block style ={styles.buttonStyleTransparent} onPress={Actions.mycard} >
+                  <Button block style ={styles.buttonStyleTransparent} onPress={Actions.login} >
                     <Text style={styles.transparentButtonText}> Login </Text>
                   </Button>
             </View>
             <View style = {{ position:'relative',width:'90%', alignSelf:'center', marginTop:0}}>
               <View style={{flexDirection:'row',flex:1, marginTop:10, marginBottom:0, marginRight:10, marginLeft:10}}>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-classes.png')}/>
-                  <Text style={styles.balanceText} >My Classes</Text>
-                </View>
-                <View style={styles.viewColumnStyle}>
-                  <Image style={styles.cardIconImages}  source = {require('../../../images/my-waitlist.png')}/>
-                  <Text style={styles.balanceText}>My Waitlists</Text>
-                </View>
+               <View style={styles.viewColumnStyle}>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-waitlist.png')}/>
+                    <Text style={styles.balanceText}>My Waitlists</Text>
+                  </View>
+                  <View style={styles.viewColumnStyle}>
+                    <Image style={styles.cardIconImages}  source = {require('../../../images/my-waitlist.png')}/>
+                    <Text style={styles.balanceText}>My Waitlists</Text>
+                  </View>
                 <View style={styles.viewColumnStyle}>
                   <Image style={styles.cardIconImages}  source = {require('../../../images/my-attendance.png')}/>
                   <Text style={styles.balanceText}>My Attendance</Text>

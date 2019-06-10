@@ -27,17 +27,27 @@ import ProfileComponent from '../components/User/Profile';
 import AboutComponent from '../components/About';
 import MainComponent from '../components/User/Main';
 
-import ExploreComponent from '../components/User/explore';
+import ExploreComponent from '../components/User/Explore';
 import ScheduleComponent from '../components/User/Schedule';
-import FavouriteComponent from '../components/User/favourite';
-import Mycard from '../components/User/myCard';
+import FavouriteComponent from '../components/User/Favourite';
+import Mycard from '../components/User/MyCard';
+import CreditcardComponent from '../components/User/CreditCard';
+
+
+import UpdateCreditCardComponent from '../components/User/UpdateCreditCard';
+import NewCreditCardAddComponent from '../components/User/NewCreditCardAdd';
+import MyPoints from '../components/User/MyPoints';
+
+
+import SettingComponent from '../components/User/Setting';
+
+import AccountComponent from '../components/User/Accounts';
+
 
 const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
    <Scene key="home" component={AboutComponent} />
-
-
           <Scene
             back
             key="forgotPassword"
@@ -96,6 +106,84 @@ const Index = (
             />
             
           </Stack>
+          <Stack
+            key="creditcard"
+            title="Credit Card"
+          >
+          <Scene
+              back
+              key="creditCard"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={CreditcardComponent}
+            />
+            </Stack>
+             <Stack
+            key="updatecreditcard"
+            title="Credit Card"
+          >
+             <Scene
+              back
+              key="updatecreditcard"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={UpdateCreditCardComponent}
+            />
+            
+          </Stack>
+
+          <Stack
+            key="newcreditcardadd"
+            title="Credit Card"
+          >
+             <Scene
+              back
+              key="newcreditcardadd"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={NewCreditCardAddComponent}
+            />
+            
+          </Stack>
+          <Stack
+            key="mypoints"
+            title="My Points"
+          >
+             <Scene
+              back
+              key="mypoints"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={MyPoints}
+            />
+            
+          </Stack>
+          <Stack
+            key="setting"
+            title="My Setting"
+          >
+             <Scene
+              back
+              key="setting"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={SettingComponent}
+            />
+            
+          </Stack>
+          <Stack
+            key="account"
+            title="My Account"
+          >
+             <Scene
+              back
+              key="account"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={AccountComponent}
+            />
+            
+          </Stack>
 
           <Stack
             key="main"
@@ -104,35 +192,32 @@ const Index = (
             icon={() => <Icon name="book" {...DefaultProps.icons} />}
             {...DefaultProps.navbarProps}
           >
-          <Scene
-              key="main"
-              style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
-              {...DefaultProps.navbarProps}
-              component={MemberContainer}
-              Layout={MainComponent}
-             
+            <Scene
+                key="main"
+                style = {{textAlign:'center',borderBottomLeftRadius:4,borderBottomRightRadius:4}}
+                {...DefaultProps.navbarProps}
+                component={MemberContainer}
+                Layout={MainComponent}
+              
+              />
+              <Scene
+                key="explore"
+                title="Explore"
+                component={MemberContainer}
+                Layout={ExploreComponent}
             />
             <Scene
-              key="explore"
-              title="Explore"
+              key="schedule"
+              title="Schedule"
               component={MemberContainer}
-              Layout={ExploreComponent}
-          />
-          <Scene
-            key="schedule"
-            title="Schedule"
-            component={MemberContainer}
-            Layout={ScheduleComponent}
-          />
-          <Scene
-            key="favourite"
-            title="Favourites"
-            component={MemberContainer}
-            Layout={FavouriteComponent}
-          />
-
-          
-
+              Layout={ScheduleComponent}
+            />
+            <Scene
+              key="favourite"
+              title="Favourites"
+              component={MemberContainer}
+              Layout={FavouriteComponent}
+            />
           </Stack>
       <Tabs
         key="tabbar"
@@ -226,6 +311,49 @@ const Index = (
               {...DefaultProps.navbarProps}
               component={MemberContainer}
               Layout={Mycard}
+            />
+            <Scene
+              back
+              key="creditcard"
+              title="Credit Card"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={Mycard}
+            />
+             <Scene
+              back
+              key="updatecreditcard"
+              {...DefaultProps.navbarProps}
+              component={UpdateProfileContainer}
+              Layout={UpdateCreditCardComponent}
+            />
+             <Scene
+              back
+              key="newcreditcardadd"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={NewCreditCardAddComponent}
+            />
+            <Scene
+              back
+              key="mypoints"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={MyPoints}
+            />
+             <Scene
+              back
+              key="setting"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={SettingComponent}
+            />
+            <Scene
+              back
+              key="account"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={AccountComponent}
             />
         </Stack>
       </Tabs>

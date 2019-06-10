@@ -8,7 +8,7 @@ const x=10;
 const Schedule = ({ member, logout }) => (
    <Container style={{flex:1,flexDirection:'row', alignItems:'center',justifyContent:'center',}}>
      <Content  >
-    {(member && member.email)}
+    {(1)}
           ?(
       <List>
         
