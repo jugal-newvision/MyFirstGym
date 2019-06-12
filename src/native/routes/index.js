@@ -38,11 +38,8 @@ import UpdateCreditCardComponent from '../components/User/UpdateCreditCard';
 import NewCreditCardAddComponent from '../components/User/NewCreditCardAdd';
 import MyPoints from '../components/User/MyPoints';
 
-
-import SettingComponent from '../components/User/Setting';
-
 import AccountComponent from '../components/User/Accounts';
-
+import SettingComponent from '../components/User/Setting';
 
 const Index = (
   <Stack hideNavBar>

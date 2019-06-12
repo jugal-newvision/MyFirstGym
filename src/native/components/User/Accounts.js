@@ -4,7 +4,6 @@ import { View, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import { Container, Content, Text, Button, Input, Label, Item} from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import Spacer from '../UI/Spacer';
-import { height } from 'window-size';
 
 class Accounts extends React.Component{
     constructor(props) {

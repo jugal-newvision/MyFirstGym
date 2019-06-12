@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Container, Content, Form, Item, Label, Input, Text, Button, View,
 } from 'native-base';
+
 import {Image, StyleSheet} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Messages from '../UI/Messages';
@@ -93,7 +94,7 @@ class Login extends React.Component {
               
               <Spacer size={20} />
               <View padder>
-                <Button block style ={styles.buttonStyle} onPress= /* {this.handleSubmit}*/ {Actions.profile} disabled={loading}>
+                <Button block style ={styles.buttonStyle} onPress= {Actions.profile} disabled={loading}>
                   <Text style={styles.loginButtonText}> {loading ? 'Loading' : 'Login' } </Text>
                 </Button>
               </View>
