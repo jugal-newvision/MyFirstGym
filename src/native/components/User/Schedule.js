@@ -5,16 +5,14 @@ import {Icon} from 'react-native-elements';
 import Spacer from '../UI/Spacer';
 import { Actions } from 'react-native-router-flux';
 const x=10;
-const Schedule = ({ member, logout }) => (
+const Favorite = ({ member, logout }) => (
    <Container style={{flex:1,flexDirection:'row', alignItems:'center',justifyContent:'center',}}>
      <Content  >
-    {(member && member.email)}
+    {(1)
           ?(
       <List>
-        
           <View style ={{alignContent:'center'}}>
             <Spacer size={10} />
-
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
                 <Body  >
@@ -45,7 +43,7 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>   
+            </ListItem>       
             <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
@@ -77,7 +75,7 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>   
+            </ListItem>       
             <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
@@ -109,7 +107,7 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>   
+            </ListItem>       
             <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
@@ -141,39 +139,7 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>  
-            <Spacer size={10} /> 
-            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
-              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
-                <Body  >
-                  <Text >11:00 AM</Text>
-                </Body>
-              </Left>
-              <Left style ={{ width:'35%'}}>
-                <Body  >
-                  <View>
-                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
-                    <Text style ={{fontSize:8}} >Gymnastic</Text>
-                  </View>
-                </Body>
-              </Left>
-              <Left style ={{ width:'40%'}}>
-                  <Body style ={{width:'100%'}}>
-                  <View style ={{width:'100%'}}>
-                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
-                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
-                    </Button>
-                  </View>
-                </Body>
-              </Left>
-              <Left style ={{ width:'10%',alignItems:'center'}}>
-                <Body>
-                  <View style ={{alignContent:'flex-end'}}>
-                  <Icon name={"chevron-right"}  size={30} color="#01a699"/>
-                  </ View>
-                </Body>
-              </Left>
-            </ListItem>   
+            </ListItem>       
             <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
@@ -205,71 +171,7 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>  
-            <Spacer size={10} /> 
-            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
-              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
-                <Body  >
-                  <Text >11:00 AM</Text>
-                </Body>
-              </Left>
-              <Left style ={{ width:'35%'}}>
-                <Body  >
-                  <View>
-                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
-                    <Text style ={{fontSize:8}} >Gymnastic</Text>
-                  </View>
-                </Body>
-              </Left>
-              <Left style ={{ width:'40%'}}>
-                  <Body style ={{width:'100%'}}>
-                  <View style ={{width:'100%'}}>
-                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
-                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
-                    </Button>
-                  </View>
-                </Body>
-              </Left>
-              <Left style ={{ width:'10%',alignItems:'center'}}>
-                <Body>
-                  <View style ={{alignContent:'flex-end'}}>
-                  <Icon name={"chevron-right"}  size={30} color="#01a699"/>
-                  </ View>
-                </Body>
-              </Left>
-            </ListItem>  
-            <Spacer size={10} /> 
-            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
-              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
-                <Body  >
-                  <Text >11:00 AM</Text>
-                </Body>
-              </Left>
-              <Left style ={{ width:'35%'}}>
-                <Body  >
-                  <View>
-                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
-                    <Text style ={{fontSize:8}} >Gymnastic</Text>
-                  </View>
-                </Body>
-              </Left>
-              <Left style ={{ width:'40%'}}>
-                  <Body style ={{width:'100%'}}>
-                  <View style ={{width:'100%'}}>
-                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
-                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
-                    </Button>
-                  </View>
-                </Body>
-              </Left>
-              <Left style ={{ width:'10%',alignItems:'center'}}>
-                <Body>
-                  <View style ={{alignContent:'flex-end'}}>
-                  <Icon name={"chevron-right"}  size={30} color="#01a699"/>
-                  </ View>
-                </Body>
-              </Left>
-            </ListItem>   
+            </ListItem>       
             <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
@@ -301,8 +203,8 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>  
-            <Spacer size={10} /> 
+            </ListItem>       
+            <Spacer size={10} />
             <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
               <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
                 <Body  >
@@ -333,17 +235,112 @@ const Schedule = ({ member, logout }) => (
                   </ View>
                 </Body>
               </Left>
-            </ListItem>   
-
+            </ListItem>       
+            <Spacer size={10} />
+            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
+              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
+                <Body  >
+                  <Text >11:00 AM</Text>
+                </Body>
+              </Left>
+              <Left style ={{ width:'35%'}}>
+                <Body  >
+                  <View>
+                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
+                    <Text style ={{fontSize:8}} >Gymnastic</Text>
+                  </View>
+                </Body>
+              </Left>
+              <Left style ={{ width:'40%'}}>
+                  <Body style ={{width:'100%'}}>
+                  <View style ={{width:'100%'}}>
+                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
+                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
+                    </Button>
+                  </View>
+                </Body>
+              </Left>
+              <Left style ={{ width:'10%',alignItems:'center'}}>
+                <Body>
+                  <View style ={{alignContent:'flex-end'}}>
+                  <Icon name={"chevron-right"}  size={30} color="#01a699"/>
+                  </ View>
+                </Body>
+              </Left>
+            </ListItem>       
+            <Spacer size={10} />
+            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
+              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
+                <Body  >
+                  <Text >11:00 AM</Text>
+                </Body>
+              </Left>
+              <Left style ={{ width:'35%'}}>
+                <Body  >
+                  <View>
+                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
+                    <Text style ={{fontSize:8}} >Gymnastic</Text>
+                  </View>
+                </Body>
+              </Left>
+              <Left style ={{ width:'40%'}}>
+                  <Body style ={{width:'100%'}}>
+                  <View style ={{width:'100%'}}>
+                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
+                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
+                    </Button>
+                  </View>
+                </Body>
+              </Left>
+              <Left style ={{ width:'10%',alignItems:'center'}}>
+                <Body>
+                  <View style ={{alignContent:'flex-end'}}>
+                  <Icon name={"chevron-right"}  size={30} color="#01a699"/>
+                  </ View>
+                </Body>
+              </Left>
+            </ListItem>       
+            <Spacer size={10} />
+            <ListItem style ={{borderColor:'#2eaaeb',borderLeftWidth:4,borderRadius:4}}>
+              <Left style ={{borderColor:'#2eaaeb',borderRightWidth:2, width:'15%'}}>
+                <Body  >
+                  <Text >11:00 AM</Text>
+                </Body>
+              </Left>
+              <Left style ={{ width:'35%'}}>
+                <Body  >
+                  <View>
+                    <Text style ={{fontSize:10,fontWeight:'900'}}>Stars Artistic</Text>
+                    <Text style ={{fontSize:8}} >Gymnastic</Text>
+                  </View>
+                </Body>
+              </Left>
+              <Left style ={{ width:'40%'}}>
+                  <Body style ={{width:'100%'}}>
+                  <View style ={{width:'100%'}}>
+                    <Button style ={{backgroundColor:'green',borderRadius:50,width:'100%',height:30}}  >
+                      <Text style={{marginLeft:0,marginRight:0,fontSize:8}}>3.5Y-8Y</Text>
+                    </Button>
+                  </View>
+                </Body>
+              </Left>
+              <Left style ={{ width:'10%',alignItems:'center'}}>
+                <Body>
+                  <View style ={{alignContent:'flex-end'}}>
+                  <Icon name={"chevron-right"}  size={30} color="#01a699"/>
+                  </ View>
+                </Body>
+              </Left>
+            </ListItem>       
           </View>
       </List>
       )
       : (
       
           <View style ={styles.content}> 
-                <Text style = {{fontWeight:'bold', fontSize:16, textAlign:'center', flex:0.8, margin:0}}>Keep track of where you're going.</Text>
+                 <Text style = {{fontWeight:'bold', fontSize:16, textAlign:'center', flex:0.8, margin:0}}>All your fitness favourites</Text>
                 <Spacer size={10} />
-                <Text style={{textAlign:'center', flex:0.8, margin:0, color:'#827b7b'}}>Easily access all your upcoming events.</Text>
+                <Text style={{textAlign:'center', flex:0.8, margin:0, color:'#827b7b'}}>View your go-to classes and book your next workout, instantly</Text>
                 <Spacer size={20} />
                 <Button block style ={styles.buttonStyle} onPress={Actions.login}>
                     <Text style={styles.loginButtonText}> Login </Text>
@@ -379,4 +376,4 @@ const styles = StyleSheet.create({
     flex:1,
 },
 });
-export default Schedule;
+export default Favorite;

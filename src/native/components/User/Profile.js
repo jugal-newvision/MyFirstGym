@@ -83,10 +83,12 @@ const Profile = ({ member, logout }) => (
                 </TouchableHighlight>
               </View>
             </View>
-            <View style = {[styles.rootView, styles.inlineView]}>
-                      <Image style={styles.settingcardIcon}  source = {require('../../../images/buy-services.png')}/>
-                      <Text style ={styles.settingText}>Buy Services</Text>
-            </View>
+            <TouchableHighlight style={[styles.rootView]} underlayColor="white" onPress={Actions.buyservices}>
+              <View style = {[styles.inlineView]}>
+                        <Image style={styles.settingcardIcon}  source = {require('../../../images/buy-services.png')}/>
+                        <Text style ={styles.settingText}>Buy Services</Text>
+              </View>
+            </TouchableHighlight>
             <TouchableHighlight style={[styles.rootView]} underlayColor="white" onPress={Actions.setting}>
               <View style = {styles.inlineView}>
                   <Image style={styles.settingcardIcon}  source = {require('../../../images/setting.png')}/>

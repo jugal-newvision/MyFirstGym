@@ -4,6 +4,7 @@ import { View, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import { Container, Content, Text, Button, Input, Label, Item} from 'native-base';
 import { Actions } from 'react-native-router-flux';
 import Spacer from '../UI/Spacer';
+import { Dropdown } from 'react-native-material-dropdown';
 
 class Accounts extends React.Component{
     constructor(props) {
@@ -14,8 +15,14 @@ class Accounts extends React.Component{
           lastname:'Walker',
           address:'Delma',
           city:'Delma',
-          country:'Delma',
+          country:'UAE',
           mobileno:'9667805455',
+          gender:'Female',
+          relation:'Mother',
+          month:'jun',
+          day:'26',
+          year:'1980',
+
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,104 +41,355 @@ class Accounts extends React.Component{
       }
     
     render(){
-
+      let gender = [{
+        value: 'Male',
+      }, {
+        value: 'Female',
+      }];
+      let relation = [{
+        value: 'Mother',
+      }, {
+        value: 'Father',
+      }];
+      let month = [{
+        value: 'Jan',
+      }, {
+        value: 'Fab',
+      }, {
+        value: 'Mar',
+      }, {
+        value: 'Apr',
+      }, {
+        value: 'May',
+      }, {
+        value: 'Jun',
+      }, {
+        value: 'Jul',
+      }, {
+        value: 'Aug',
+      }, {
+        value: 'Sept',
+      }, {
+        value: 'Oct',
+      }, {
+        value: 'Nov',
+      }, {
+        value: 'Dec',
+      },
+    ];
+    let day = [{
+      value: 1,
+    }, {
+      value: 2,
+    }, {
+      value: 3,
+    }, {
+      value: 4,
+    }, {
+      value: 5,
+    }, {
+      value: 6,
+    }, {
+      value: 7,
+    }, {
+      value: 8,
+    }, {
+      value: 9,
+    }, {
+      value: 10,
+    }, {
+      value: 11,
+    }, {
+      value: 12,
+    }, {
+      value: 13,
+    }, {
+      value: 14,
+    }, {
+      value: 15,
+    }, {
+      value: 16,
+    }, {
+      value: 17,
+    }, {
+      value: 18,
+    }, {
+      value: 19,
+    }, {
+      value: 20,
+    }, {
+      value: 21,
+    }, {
+      value: 22,
+    }, {
+      value: 23,
+    }, {
+      value: 24,
+    }, {
+      value: 25,
+    }, {
+      value: 26,
+    }, {
+      value: 27,
+    }, {
+      value: 28,
+    }, {
+      value: 29,
+    }, {
+      value: 30,
+    }, {
+      value: 31,
+    }];
+    let year = [{
+      value: 1980,
+    }, {
+      value: 1981,
+    }, {
+      value: 1982,
+    }, {
+      value: 1983,
+    }, {
+      value: 1984,
+    }, {
+      value: 1985,
+    }, {
+      value: 1986,
+    }, {
+      value: 1987,
+    }, {
+      value: 1988,
+    }, {
+      value: 1989,
+    }, {
+      value: 1990,
+    }, {
+      value: 1991,
+    }, {
+      value: 1992,
+    }, {
+      value: 1993,
+    }, {
+      value: 1994,
+    }, {
+      value: 1995,
+    }, {
+      value: 1996,
+    }, {
+      value: 1997,
+    }, {
+      value: 1998,
+    }, {
+      value: 1999,
+    }, {
+      value: 2000,
+    }, {
+      value: 2001,
+    }, {
+      value: 2002,
+    }, {
+      value: 2003,
+    }, {
+      value: 2004,
+    }, {
+      value: 2005,
+    }, {
+      value: 2006,
+    }, {
+      value: 2007,
+    }, {
+      value: 2008,
+    }, {
+      value: 2009,
+    }, {
+      value: 2010,
+    }, {
+      value: 2011,
+    }, {
+      value: 2012,
+    }, {
+      value: 2013,
+    }, {
+      value: 2014,
+    }, {
+      value: 2015,
+    }, {
+      value: 2016,
+    }, {
+      value: 2017,
+    }, {
+      value: 2018,
+    }, {
+      value: 2019,
+    }]
         return(
             <Container style = {styles.mainContainer}>
       <Content>
          {(this.state.username)
          ?(
-          
-          <View style ={styles.content}> 
+           <View>
             <Spacer size={20} />
             <Text style = {styles.title}>MY INFO</Text>
-            <View style={styles.notification}>
-              <View style = {styles.firstColumn}>
-                <Item stackedLabel>
-                  <Label>First Name</Label>
-                  <Input
-                      style={styles.input}
-                      placeholderTextColor="#000000"
-                      autoCapitalize="none"
-                      placeholder = 'Janet'
-                      value = {this.state.firstname}
-                      keyboardType="default"
-                      onChangeText={v => this.handleChange('firstname', v)}
-                    />
+            <View style ={styles.content}> 
+            <Spacer size={20} />
+              <View style={styles.notification}>
+                <View style = {styles.firstColumn}>
+                  <Item stackedLabel  style={styles.item}>
+                    <Label>First Name</Label>
+                    <Input
+                        style={styles.input}
+                        placeholderTextColor="#000000"
+                        autoCapitalize="none"
+                        placeholder = 'Janet'
+                        value = {this.state.firstname}
+                        keyboardType="default"
+                        onChangeText={v => this.handleChange('firstname', v)}
+                      />
+                      </Item>
+                      <Item stackedLabel style={styles.item}>
+                        <Label>Last Name</Label>
+                        <Input
+                            style={styles.input}
+                            placeholderTextColor="#000000"
+                            autoCapitalize="none"
+                            placeholder = 'Walker'
+                            value = {this.state.lastname}
+                            keyboardType="default"
+                            onChangeText={v => this.handleChange('lastname', v)}
+                          />
+                      </Item>
+                  </View>
+                  <View style = {styles.secondColumn}>
+                      <View>
+                        <Image  style = {styles.profileImage} source = {require('../../../images/image-2.jpg')} />
+                      </View>
+                  </View>
+                </View>
+                <View style = {styles.itemView}>
+                  <Item stackedLabel style={styles.item}>
+                    <Dropdown containerStyle={styles.input}
+                      label='Gender'
+                      textColor='#000000'
+                      baseColor='#575757'
+                      inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                      labelFontSize={17}
+                      value={this.state.gender}
+                        data={gender}
+                      />
+                  </Item>
+                </View>
+                <View style = {styles.itemView}>
+                  <Item stackedLabel style={styles.item}>
+                    <Dropdown containerStyle={styles.input}
+                      label='Relationship'
+                      textColor='#000000'
+                      baseColor='#575757'
+                      inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                      labelFontSize={17}
+                      value={this.state.relation}
+                      data={relation}
+                      />
+                  </Item>
+                </View>
+                <View style={styles.notification}>
+                  <View style = {styles.birthday}>
+                    <Item stackedLabel style={styles.item}>
+                      <Dropdown containerStyle={styles.input}
+                        label='Birthday'
+                        textColor='#000000'
+                        baseColor='#575757'
+                        inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                        labelFontSize={17}
+                        value={this.state.month}
+                        data={month}
+                        />
                     </Item>
-                    <Item stackedLabel>
-                  <Label>Last Name</Label>
-                  <Input
-                      style={styles.input}
-                      placeholderTextColor="#000000"
-                      autoCapitalize="none"
-                      placeholder = 'Walker'
-                      value = {this.state.lastname}
-                      keyboardType="default"
-                      onChangeText={v => this.handleChange('lastname', v)}
-                    />
+                  </View>
+                  <View style = {styles.birthday}>
+                    <Item stackedLabel style={styles.item}>
+                      <Dropdown containerStyle={styles.input}
+                        textColor='#000000'
+                        baseColor='#575757'
+                        inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                        labelFontSize={17}
+                        value={this.state.day}
+                        data={day}
+                        />
                     </Item>
-              </View>
-              <View style = {styles.secondColumn}>
-
-              </View>
-              <View>
-                <Item stackedLabel>
-                    <Label>Address</Label>
-                    <Input
-                        style={styles.input}
-                        placeholderTextColor="#000000"
-                        autoCapitalize="none"
-                        placeholder = 'Delma'
-                        value = {this.state.address}
-                        keyboardType="default"
-                        onChangeText={v => this.handleChange('address', v)}
-                      />
-                      </Item>
-              </View>
-              <View>
-                <Item stackedLabel>
-                    <Label>City</Label>
-                    <Input
-                        style={styles.input}
-                        placeholderTextColor="#000000"
-                        autoCapitalize="none"
-                        placeholder = 'Delma'
-                        value = {this.state.city}
-                        keyboardType="default"
-                        onChangeText={v => this.handleChange('city', v)}
-                      />
-                      </Item>
-              </View>
-              <View>
-                <Item stackedLabel>
-                    <Label>Country</Label>
-                    <Input
-                        style={styles.input}
-                        placeholderTextColor="#000000"
-                        autoCapitalize="none"
-                        placeholder = 'UAE'
-                        value = {this.state.country}
-                        keyboardType="default"
-                        onChangeText={v => this.handleChange('country', v)}
-                      />
-                      </Item>
-              </View>
-              <View>
-                <Item stackedLabel>
-                    <Label>mobile No</Label>
-                    <Input
-                        style={styles.input}
-                        placeholderTextColor="#000000"
-                        autoCapitalize="none"
-                        placeholder = '+91 9667805455'
-                        value = {this.state.mobileno}
-                        keyboardType="default"
-                        onChangeText={v => this.handleChange('mobileno', v)}
-                      />
-                      </Item>
+                  </View>
+                  <View style = {styles.birthday}>
+                    <Item stackedLabel style={styles.item}>
+                      <Dropdown containerStyle={styles.input}
+                        textColor='#000000'
+                        baseColor='#575757'
+                        inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                        labelFontSize={17}
+                        value={this.state.year}
+                        data={year}
+                        />
+                    </Item>
+                  </View>
+                </View>
+                <View style = {styles.itemView}>
+                  <Item stackedLabel style={styles.item}>
+                      <Label>Address</Label>
+                      <Input
+                          style={styles.input}
+                          placeholderTextColor="#000000"
+                          autoCapitalize="none"
+                          placeholder = 'Delma'
+                          value = {this.state.address}
+                          keyboardType="default"
+                          onChangeText={v => this.handleChange('address', v)}
+                        />
+                        </Item>
+                </View>
+                <View style = {styles.itemView}>
+                  <Item stackedLabel  style={styles.item} >
+                      <Label>City</Label>
+                      <Input
+                          style={styles.input}
+                          placeholderTextColor="#000000"
+                          autoCapitalize="none"
+                          placeholder = 'Delma'
+                          value = {this.state.city}
+                          keyboardType="default"
+                          onChangeText={v => this.handleChange('city', v)}
+                        />
+                        </Item>
+                </View>
+                <View style = {styles.itemView}>
+                  <Item stackedLabel  style={styles.item}>
+                      <Label>Country</Label>
+                      <Input
+                          style={styles.input}
+                          placeholderTextColor="#000000"
+                          autoCapitalize="none"
+                          placeholder = 'UAE'
+                          value = {this.state.country}
+                          keyboardType="default"
+                          onChangeText={v => this.handleChange('country', v)}
+                        />
+                        </Item>
+                </View>
+                <View style = {styles.itemView}>
+                  <Item stackedLabel style={styles.item}>
+                      <Label>Mobile No</Label>
+                      <Input
+                          style={styles.input}
+                          placeholderTextColor="#000000"
+                          autoCapitalize="none"
+                          placeholder = '+91 9667805455'
+                          value = {this.state.mobileno}
+                          keyboardType="default"
+                          onChangeText={v => this.handleChange('mobileno', v)}
+                        />
+                        </Item>
+                </View>
+                  <Button style = {{alignItems:'center',width:58,textAlign:'center', height:58, borderRadius:29,backgroundColor:'#0099EF',color:'#ffffff', position:'absolute', alignSelf:'flex-end', bottom:10, right:10}}>
+                    <Image  style = {{marginLeft:19 ,alignSelf:'center', width:20, height:20, borderRadius:10}} source = {require('../../../images/Shape.png')} />
+                  </Button>
               </View>
             </View>
-          </View>
          ):
          (
           <View style ={styles.content}> 
@@ -141,6 +399,7 @@ class Accounts extends React.Component{
             <Spacer size={20} />
             <Button block style ={styles.buttonStyle} onPress={Actions.login}>
                 <Text style={styles.loginButtonText}> Login </Text>
+                
             </Button>
      </View>
          )
@@ -153,6 +412,14 @@ class Accounts extends React.Component{
   };
   
   const styles = StyleSheet.create({
+    profileImage:{
+      width:100,
+      height:100,
+      borderRadius:50,
+      alignSelf:'center',
+      position:'absolute',
+      top:-50
+    },
       mainContainer:{
         flex:1,
         flexDirection:'row',
@@ -196,31 +463,41 @@ class Accounts extends React.Component{
         alignItems:'center',
         margin:0,
         flex:1,
+        paddingLeft:15,
+        paddingRight:15,
     },
 
     notification:{
-      paddingLeft:15,
       flex:1,
       flexDirection:'row',
-      marginBottom:20
     },
     firstColumn:{
-      flex:0.7
+      flex:0.6
     },
     secondColumn:{
-      flex:0.3,
+      flex:0.4,
       textAlign:'center',
       alignItems:'center',
       justifyContent:'center',
+    },
+    birthday:{
+      flex:0.33
     },
     input:{
       color:'#000000', 
       textAlignVertical:'center', 
       backgroundColor:'#ffffff', 
       width:'100%',
-      borderWidth:0,
-      maxHeight:20,
-      height:15
+      paddingLeft:0,
+      borderBottomWidth:0
+    },
+    item:{
+      maxHeight:55,
+      width:'100%',
+      borderBottomWidth:0
+    },
+    itemView:{
+      width:'100%',
     },
 
   });

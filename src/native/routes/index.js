@@ -41,6 +41,8 @@ import MyPoints from '../components/User/MyPoints';
 import AccountComponent from '../components/User/Accounts';
 import SettingComponent from '../components/User/Setting';
 
+import BuyServicesComponent from '../components/User/BuyServices';
+
 const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
@@ -169,6 +171,19 @@ const Index = (
             
           </Stack>
           <Stack
+            key="buyservices"
+            title="Buy Services"
+          >
+             <Scene
+              back
+              key="buyservices"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={BuyServicesComponent}
+            />
+            
+          </Stack>
+          <Stack
             key="account"
             title="My Account"
           >
@@ -181,6 +196,7 @@ const Index = (
             />
             
           </Stack>
+
 
           <Stack
             key="main"
@@ -344,6 +360,13 @@ const Index = (
               {...DefaultProps.navbarProps}
               component={MemberContainer}
               Layout={SettingComponent}
+            />
+             <Scene
+              back
+              key="buyservices"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={BuyServicesComponent}
             />
             <Scene
               back
