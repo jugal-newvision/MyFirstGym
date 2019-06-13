@@ -11,6 +11,10 @@ import RecipeSingleComponent from '../components/Recipe/Single';
 
 import SignUpContainer from '../../containers/SignUp';
 import SignUpComponent from '../components/User/SignUp';
+import SignUpChildComponent from '../components/User/SignUpChild';
+import SignUpCreateLoginComponrnt from '../components/User/SignUpCreateLogin';
+
+
 
 import LoginContainer from '../../containers/Login';
 import LoginComponent from '../components/User/Login';
@@ -42,7 +46,11 @@ import AccountComponent from '../components/User/Accounts';
 import SettingComponent from '../components/User/Setting';
 
 import BuyServicesComponent from '../components/User/BuyServices';
-import CheckoutComponent from '../components/User/Checkout';;
+import CheckoutComponent from '../components/User/Checkout';
+
+import PaymentMethodComponent from '../components/User/Payment';
+
+import PaymentCardComponent from '../components/User/PaymentCard'
 
 const Index = (
   <Stack hideNavBar>
@@ -55,7 +63,6 @@ const Index = (
             component={ForgotPasswordContainer}
             Layout={ForgotPasswordComponent}
           />
-
         <Stack
           key="login"
           title="Welcome to Login"
@@ -78,6 +85,30 @@ const Index = (
               {...DefaultProps.navbarProps}
               component={SignUpContainer}
               Layout={SignUpComponent}
+            />
+          </Stack>
+          <Stack
+            key="signup_child"
+            title="Sign Up"
+          >
+          <Scene
+              back
+              key="signup_child"
+              {...DefaultProps.navbarProps}
+              component={SignUpContainer}
+              Layout={SignUpChildComponent}
+            />
+          </Stack>
+          <Stack
+            key="signup_login"
+            title="Sign Up"
+          >
+          <Scene
+              back
+              key="signup_login"
+              {...DefaultProps.navbarProps}
+              component={SignUpContainer}
+              Layout={SignUpCreateLoginComponrnt}
             />
           </Stack>
           <Stack
@@ -208,7 +239,31 @@ const Index = (
               component={MemberContainer}
               Layout={CheckoutComponent}
             />
-            
+          </Stack>
+
+          <Stack
+            key="payment"
+            title="Payment Method"
+          >
+             <Scene
+              back
+              key="payment"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={PaymentMethodComponent}
+            />
+          </Stack>
+          <Stack
+            key="paymentcard"
+            title="Debit/Credit Card"
+          >
+             <Scene
+              back
+              key="paymentcard"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={PaymentCardComponent}
+            />
           </Stack>
 
           <Stack
@@ -307,6 +362,20 @@ const Index = (
             Layout={SignUpComponent}
           />
           <Scene
+              back
+              key="signup_child"
+              {...DefaultProps.navbarProps}
+              component={SignUpContainer}
+              Layout={SignUpChildComponent}
+            />
+            <Scene
+              back
+              key="signup_login"
+              {...DefaultProps.navbarProps}
+              component={SignUpContainer}
+              Layout={SignUpCreateLoginComponrnt}
+            />
+          <Scene
             back
             key="login"
             title="LOGIN"
@@ -394,6 +463,20 @@ const Index = (
               {...DefaultProps.navbarProps}
               component={MemberContainer}
               Layout={CheckoutComponent}
+            />
+            <Scene
+              back
+              key="payment"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={PaymentMethodComponent}
+            />
+            <Scene
+              back
+              key="paymentcard"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={PaymentCardComponent}
             />
         </Stack>
       </Tabs>

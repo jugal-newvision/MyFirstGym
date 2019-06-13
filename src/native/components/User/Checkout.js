@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet , Image } from 'react-native';
 import {Container, Content, List, ListItem, Body, Left, Text, Button} from 'native-base';
 import Spacer from '../UI/Spacer';
+import { Actions } from 'react-native-router-flux';
 
 const BuyServices = ({ member, logout }) => (
    <Container>
@@ -57,7 +58,7 @@ const BuyServices = ({ member, logout }) => (
             </View>
             <Spacer size={40} />
             <View style={{width:'90%', alignContent:'center', alignSelf:'center'}}>
-                <Button block style ={styles.buttonStyle}>
+                <Button block style ={styles.buttonStyle} onPress={Actions.payment}>
                   <Text style={styles.loginButtonText}>Select Payment</Text>
                 </Button>
               </View>

@@ -8,27 +8,32 @@ import Header from '../UI/Header';
 import Spacer from '../UI/Spacer';
 import { Dropdown } from 'react-native-material-dropdown';
 
-class SignUp extends React.Component {
+class SignUpChild extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
           username: 'Tyler',
-          firstname:'Tyler',
-          lastname:'',
-          address:' ',
-          city:' ',
-          country:' ',
-          mobileno:' ',
-          gender:' ',
-          relation:' ',
-          month:'Month',
-          day:'Day',
-          year:'Year',
-
+          childfirstname:' ',
+          childlastname:'',
+          childschool:' ',
+          childgender:' ',
+          childmonth:'Month',
+          childday:'Day',
+          childyear:'Year',
+          secondchildfirstname:' ',
+          secondchildlastname:'',
+          secondchildschool:' ',
+          secondchildgender:' ',
+          secondchildmonth:'Month',
+          secondchildday:'Day',
+          secondchildyear:'Year',
+          child:1,
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-      }
+      };
+     
+
 
       handleChange = (name, val) =>{
         this.setState({ [name]: val })
@@ -40,6 +45,9 @@ class SignUp extends React.Component {
         return onFormSubmit(this.state)
           .then(() => setTimeout(() => Actions.pop(), 1000))
           .catch(() => {});
+      }
+      ChildAdd =() =>{
+        this.setState({child:2})
       }
     
     render(){
@@ -229,23 +237,23 @@ class SignUp extends React.Component {
          {(this.state.username)
          ?(
            <View>
-            <Spacer size={20} />
-            <Text style = {styles.title}>PARENT INFO</Text>
-            <View style ={styles.content}> 
-            <Spacer size={20} />
-              <View style={styles.notification}>
-                <View style = {styles.firstColumn}>
-                  <Item stackedLabel  style={styles.item}>
-                    <Label>First Name</Label>
-                    <Input
-                        style={styles.input}
-                        placeholderTextColor="#000000"
-                        autoCapitalize="none"
-                        placeholder = ' '
-                        value = {this.state.firstname}
-                        keyboardType="default"
-                        onChangeText={v => this.handleChange('firstname', v)}
-                      />
+              <Spacer size={20} />
+              <Text style = {styles.title}>CHILD INFO</Text>
+              <View style ={styles.content}> 
+                <Spacer size={20} />
+                  <View style={styles.notification}>
+                    <View style = {styles.firstColumn}>
+                      <Item stackedLabel  style={styles.item}>
+                        <Label>First Name</Label>
+                        <Input
+                            style={styles.input}
+                            placeholderTextColor="#000000"
+                            autoCapitalize="none"
+                            placeholder = 'Robert'
+                            value = {this.state.childfirstname}
+                            keyboardType="default"
+                            onChangeText={v => this.handleChange('childfirstname', v)}
+                          />
                       </Item>
                       <Item stackedLabel style={styles.item}>
                         <Label>Last Name</Label>
@@ -254,9 +262,9 @@ class SignUp extends React.Component {
                             placeholderTextColor="#000000"
                             autoCapitalize="none"
                             placeholder = ' '
-                            value = {this.state.lastname}
+                            value = {this.state.childlastname}
                             keyboardType="default"
-                            onChangeText={v => this.handleChange('lastname', v)}
+                            onChangeText={v => this.handleChange('childlastname', v)}
                           />
                       </Item>
                   </View>
@@ -274,21 +282,8 @@ class SignUp extends React.Component {
                       baseColor='#575757'
                       inputContainerStyle={{ borderBottomColor: 'transparent' }}
                       labelFontSize={17}
-                      value={this.state.gender}
+                      value={this.state.childgender}
                         data={gender}
-                      />
-                  </Item>
-                </View>
-                <View style = {styles.itemView}>
-                  <Item stackedLabel style={styles.item}>
-                    <Dropdown containerStyle={styles.input}
-                      label='Relationship'
-                      textColor='#000000'
-                      baseColor='#575757'
-                      inputContainerStyle={{ borderBottomColor: 'transparent' }}
-                      labelFontSize={17}
-                      value={this.state.relation}
-                      data={relation}
                       />
                   </Item>
                 </View>
@@ -301,7 +296,7 @@ class SignUp extends React.Component {
                         baseColor='#575757'
                         inputContainerStyle={{ borderBottomColor: 'transparent' }}
                         labelFontSize={17}
-                        value={this.state.month}
+                        value={this.state.childmonth}
                         data={month}
                         />
                     </Item>
@@ -313,7 +308,7 @@ class SignUp extends React.Component {
                         baseColor='#575757'
                         inputContainerStyle={{ borderBottomColor: 'transparent' }}
                         labelFontSize={17}
-                        value={this.state.day}
+                        value={this.state.childday}
                         data={day}
                         />
                     </Item>
@@ -325,7 +320,7 @@ class SignUp extends React.Component {
                         baseColor='#575757'
                         inputContainerStyle={{ borderBottomColor: 'transparent' }}
                         labelFontSize={17}
-                        value={this.state.year}
+                        value={this.state.childyear}
                         data={year}
                         />
                     </Item>
@@ -333,64 +328,141 @@ class SignUp extends React.Component {
                 </View>
                 <View style = {styles.itemView}>
                   <Item stackedLabel style={styles.item}>
-                      <Label>Address</Label>
+                      <Label>School</Label>
                       <Input
                           style={styles.input}
                           placeholderTextColor="#000000"
                           autoCapitalize="none"
                           placeholder = 'Delma'
-                          value = {this.state.address}
+                          value = {this.state.childschool}
                           keyboardType="default"
-                          onChangeText={v => this.handleChange('address', v)}
+                          onChangeText={v => this.handleChange('childschool', v)}
                         />
                         </Item>
                 </View>
-                <View style = {styles.itemView}>
-                  <Item stackedLabel  style={styles.item} >
-                      <Label>City</Label>
-                      <Input
-                          style={styles.input}
-                          placeholderTextColor="#000000"
-                          autoCapitalize="none"
-                          placeholder = 'Delma'
-                          value = {this.state.city}
-                          keyboardType="default"
-                          onChangeText={v => this.handleChange('city', v)}
-                        />
-                        </Item>
                 </View>
-                <View style = {styles.itemView}>
-                  <Item stackedLabel  style={styles.item}>
-                      <Label>Country</Label>
-                      <Input
-                          style={styles.input}
-                          placeholderTextColor="#000000"
-                          autoCapitalize="none"
-                          placeholder = 'UAE'
-                          value = {this.state.country}
-                          keyboardType="default"
-                          onChangeText={v => this.handleChange('country', v)}
-                        />
-                        </Item>
-                </View>
-                <View style = {styles.itemView}>
-                  <Item stackedLabel style={styles.item}>
-                      <Label>Mobile No</Label>
-                      <Input
-                          style={styles.input}
-                          placeholderTextColor="#000000"
-                          autoCapitalize="none"
-                          placeholder = '+91 9667805455'
-                          value = {this.state.mobileno}
-                          keyboardType="default"
-                          onChangeText={v => this.handleChange('mobileno', v)}
-                        />
-                        </Item>
-                </View>
-                  <Button style = {{alignItems:'center',width:58,textAlign:'center', height:58, borderRadius:29,backgroundColor:'#0099EF',color:'#ffffff', position:'absolute', alignSelf:'flex-end', bottom:10, right:10}} onPress={Actions.signup_child}>
+                {(this.state.child===2)
+                  ? (
+                    <View>
+                      <Spacer size={20} />
+                      <Text style = {styles.title}>SECOND CHILD INFO</Text>
+                      <View style ={styles.content}> 
+                        <Spacer size={20} />
+                          <View style={styles.notification}>
+                            <View style = {styles.firstColumn}>
+                              <Item stackedLabel  style={styles.item}>
+                                <Label>First Name</Label>
+                                <Input
+                                    style={styles.input}
+                                    placeholderTextColor="#000000"
+                                    autoCapitalize="none"
+                                    placeholder = 'Robert'
+                                    value = {this.state.secondchildfirstname}
+                                    keyboardType="default"
+                                    onChangeText={v => this.handleChange('secondchildfirstname', v)}
+                                  />
+                              </Item>
+                              <Item stackedLabel style={styles.item}>
+                                <Label>Last Name</Label>
+                                <Input
+                                    style={styles.input}
+                                    placeholderTextColor="#000000"
+                                    autoCapitalize="none"
+                                    placeholder = ' '
+                                    value = {this.state.secondchildlastname}
+                                    keyboardType="default"
+                                    onChangeText={v => this.handleChange('secondchildlastname', v)}
+                                  />
+                              </Item>
+                          </View>
+                          <View style = {styles.secondColumn}>
+                              <View>
+                                <Image  style = {styles.profileImage} source = {require('../../../images/image-2.jpg')} />
+                              </View>
+                          </View>
+                        </View>
+                        <View style = {styles.itemView}>
+                          <Item stackedLabel style={styles.item}>
+                            <Dropdown containerStyle={styles.input}
+                              label='Gender'
+                              textColor='#000000'
+                              baseColor='#575757'
+                              inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                              labelFontSize={17}
+                              value={this.state.secondchildgender}
+                                data={gender}
+                              />
+                          </Item>
+                        </View>
+                        <View style={styles.notification}>
+                          <View style = {styles.birthday}>
+                            <Item stackedLabel style={styles.item}>
+                              <Dropdown containerStyle={styles.input}
+                                label='Birthday'
+                                textColor='#000000'
+                                baseColor='#575757'
+                                inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                                labelFontSize={17}
+                                value={this.state.secondchildmonth}
+                                data={month}
+                                />
+                            </Item>
+                          </View>
+                          <View style = {styles.birthday}>
+                            <Item stackedLabel style={styles.item}>
+                              <Dropdown containerStyle={styles.input}
+                                textColor='#000000'
+                                baseColor='#575757'
+                                inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                                labelFontSize={17}
+                                value={this.state.secondchildday}
+                                data={day}
+                                />
+                            </Item>
+                          </View>
+                          <View style = {styles.birthday}>
+                            <Item stackedLabel style={styles.item}>
+                              <Dropdown containerStyle={styles.input}
+                                textColor='#000000'
+                                baseColor='#575757'
+                                inputContainerStyle={{ borderBottomColor: 'transparent' }}
+                                labelFontSize={17}
+                                value={this.state.secondchildyear}
+                                data={year}
+                                />
+                            </Item>
+                          </View>
+                        </View>
+                        <View style = {styles.itemView}>
+                          <Item stackedLabel style={styles.item}>
+                              <Label>School</Label>
+                              <Input
+                                  style={styles.input}
+                                  placeholderTextColor="#000000"
+                                  autoCapitalize="none"
+                                  placeholder = 'Delma'
+                                  value = {this.state.secondchildschool}
+                                  keyboardType="default"
+                                  onChangeText={v => this.handleChange('secondchildschool', v)}
+                                />
+                                </Item>
+                        </View>
+                        </View>
+                        </View>
+                    )
+                  : (<View><Text></Text></View>)
+              }
+                <TouchableHighlight style ={styles.headingView} onPress={this.ChildAdd} underlayColor="white">
+                  <View style ={styles.headingView} >
+                    <Text style={styles.textHeading} >Add Child</Text>
+                    <View style = {{width:32, height:32, borderRadius:16, backgroundColor:'#0099EF', marginLeft:10, position:'absolute', right:'25%'}}>
+                      <Image  style = {{width:9.33, height:9.33,  alignSelf:'center', marginTop:11 }} source = {require('../../../images/plusimage.png')} />
+                    </View>
+                  </View>
+                </TouchableHighlight>
+                  <Button onPress={Actions.signup_login} style = {{alignItems:'center',width:58,textAlign:'center', height:58, borderRadius:29,backgroundColor:'#0099EF',color:'#ffffff', position:'absolute', alignSelf:'flex-end', bottom:50, right:10}}>
                     <Image  style = {{marginLeft:19 ,alignSelf:'center', width:20, height:20, borderRadius:10}} source = {require('../../../images/Shape.png')} />
                   </Button>
-              </View>
             </View>
          ):
          (
@@ -399,7 +471,7 @@ class SignUp extends React.Component {
             <Spacer size={10} />
             <Text style={{textAlign:'center', flex:0.8, margin:0, color:'#827b7b'}}>View your go-to classes and book your next workout, instantly</Text>
             <Spacer size={20} />
-            <Button block style ={styles.buttonStyle} onPress={Actions.login}>
+            <Button block style ={styles.buttonStyle} onPress={Actions.signup_child}>
                 <Text style={styles.loginButtonText}> Login </Text>
                 
             </Button>
@@ -425,8 +497,6 @@ class SignUp extends React.Component {
       mainContainer:{
         flex:1,
         flexDirection:'row',
-        alignItems:'center',
-        justifyContent:'center',
         backgroundColor:'#ffffff'
       },
       title:{
@@ -505,6 +575,27 @@ class SignUp extends React.Component {
     itemView:{
       width:'100%',
     },
+    headingView:{
+      flexDirection:'row', 
+      flexWrap:'wrap', 
+      textAlign:'center',
+      alignContent:'center',
+      alignItems:'center',
+      margin:0,
+      flex:1,
+      marginBottom:10
+    },
+    textHeading:{
+      width:'100%',
+      textAlign:'center',
+      fontSize:17,
+      lineHeight:22,
+      alignContent:'center',
+      alignSelf:'center',
+      margin:0,
+      position:'relative',
+      color:'rgba(0, 0, 0, 0.54)'
+    },
 
   });
-export default SignUp;
+export default SignUpChild;
