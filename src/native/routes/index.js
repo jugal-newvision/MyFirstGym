@@ -42,6 +42,7 @@ import AccountComponent from '../components/User/Accounts';
 import SettingComponent from '../components/User/Setting';
 
 import BuyServicesComponent from '../components/User/BuyServices';
+import CheckoutComponent from '../components/User/Checkout';;
 
 const Index = (
   <Stack hideNavBar>
@@ -196,7 +197,19 @@ const Index = (
             />
             
           </Stack>
-
+          <Stack
+            key="checkout"
+            title="Checkout"
+          >
+             <Scene
+              back
+              key="checkout"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={CheckoutComponent}
+            />
+            
+          </Stack>
 
           <Stack
             key="main"
@@ -374,6 +387,13 @@ const Index = (
               {...DefaultProps.navbarProps}
               component={MemberContainer}
               Layout={AccountComponent}
+            />
+            <Scene
+              back
+              key="checkout"
+              {...DefaultProps.navbarProps}
+              component={MemberContainer}
+              Layout={CheckoutComponent}
             />
         </Stack>
       </Tabs>

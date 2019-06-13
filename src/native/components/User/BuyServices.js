@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet , Image } from 'react-native';
 import {Container, Content, List, ListItem, Body, Left, Text, Button} from 'native-base';
 import Spacer from '../UI/Spacer';
+import { Actions } from 'react-native-router-flux';
 
 const BuyServices = ({ member, logout }) => (
    <Container>
@@ -67,7 +68,7 @@ const BuyServices = ({ member, logout }) => (
             <Text style={styles.textHeading} >PRIVATE LESSON/TRAINING</Text>
         </View>
 
-        <Button style = {styles.cartButton}>
+        <Button style = {styles.cartButton} onPress={Actions.checkout}>
             <Image  style = {styles.imageStyle} source = {require('../../../images/cart.png')} />
         </Button>
      </View>
