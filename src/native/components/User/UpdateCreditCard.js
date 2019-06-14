@@ -184,7 +184,7 @@ const styles = StyleSheet.create({
     fontSize:12
   },
   buttonStyleTransparent:{
-    backgroundColor:'#2eaaeb',
+    backgroundColor:'#147BDF',
     borderRadius:20,
     marginTop:100,
   },

@@ -132,7 +132,7 @@ class SignUpCreateLogin extends React.Component {
                     onPress={this.changeCheckboxValue}
                   />
                   <Spacer size={15} />
-                  <Button block disabled={loading} style={{width:'80%', alignSelf:'center',backgroundColor:'#147BDF', borderRadius:25}}>
+                  <Button block disabled={loading} style={{width:'80%', alignSelf:'center',backgroundColor:'#147BDF', borderRadius:25}} onPress={Actions.login}>
                     <Text>{loading ? 'Loading' : 'SUBMIT'}</Text>
                   </Button>
                   <Spacer size={25} />

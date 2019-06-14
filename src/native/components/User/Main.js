@@ -94,7 +94,7 @@ render() {
                     borderColor:'white',
                     backgroundColor:'white',
                   }}
-                  onPress={Actions.favourite}
+                  onPress={Actions.explore}
                 >
                   EXPLORE
                 </Text>

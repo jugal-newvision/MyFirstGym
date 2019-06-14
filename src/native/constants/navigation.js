@@ -2,13 +2,20 @@ import Colors from '../../../native-base-theme/variables/commonColor';
 
 export default {
   navbarProps: {
-    navigationBarStyle: { backgroundColor: 'white' },
+    navigationBarStyle: { 
+      backgroundColor: 'lightblue',
+      borderBottomLeftRadius:28,
+
+      borderBottomRightRadius:28
+
+   },
     titleStyle: {
       color: Colors.textColor,
       alignSelf: 'center',
       letterSpacing: 2,
       fontSize: Colors.fontSizeBase,
       borderBottomLeftRadius:8,
+
       borderBottomRightRadius:8
     },
     backButtonTintColor: Colors.textColor,
@@ -22,6 +29,6 @@ export default {
   },
 
   icons: {
-    style: { color: 'white', height: 30, width: 30 },
+    style: { color: 'blue', height: 30, width: 30 },
   },
 };

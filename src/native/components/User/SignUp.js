@@ -56,7 +56,7 @@ class SignUp extends React.Component {
       let month = [{
         value: 'Jan',
       }, {
-        value: 'Fab',
+        value: 'Feb',
       }, {
         value: 'Mar',
       }, {
@@ -262,7 +262,7 @@ class SignUp extends React.Component {
                   </View>
                   <View style = {styles.secondColumn}>
                       <View>
-                        <Image  style = {styles.profileImage} source = {require('../../../images/image-2.jpg')} />
+                        <Image  style = {styles.profileImage} source = {require('../../../images/profile_image/profile_image.png')} />
                       </View>
                   </View>
                 </View>

@@ -55,7 +55,7 @@ import PaymentCardComponent from '../components/User/PaymentCard'
 const Index = (
   <Stack hideNavBar>
     <Scene hideNavBar>
-   <Scene key="home" component={AboutComponent} />
+   <Scene key="home" component={ AboutComponent } />
           <Scene
             back
             key="forgotPassword"

@@ -54,7 +54,7 @@ class Accounts extends React.Component{
       let month = [{
         value: 'Jan',
       }, {
-        value: 'Fab',
+        value: 'Feb',
       }, {
         value: 'Mar',
       }, {

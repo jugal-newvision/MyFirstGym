@@ -142,7 +142,7 @@ class UpdateCreditCard extends React.Component {
                   />
                 </Item>
                 <Item stackedLabel style={{borderRadius:4, width: '100%', alignSelf:'flex-start'}}>
-                <Label>validate Your Account Password</Label>
+                <Label>validate Your account password</Label>
                   <Input
                 style={{borderRadius:4, color:'#959595', textAlignVertical:'center', backgroundColor:'#F0F0F0', borderWidth:0, maxWidth:'100%', paddingLeft:10}}
                     placeholder = ''
@@ -211,11 +211,9 @@ const styles = StyleSheet.create({
     fontSize:12
   },
   buttonStyleTransparent:{
-    backgroundColor:'#2eaaeb',
+    backgroundColor:'#25AE88',
     borderRadius:20,
     marginTop:20,
   },
 });
-
-
 export default UpdateCreditCard;
