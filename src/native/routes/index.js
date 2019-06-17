@@ -34,6 +34,9 @@ import MainComponent from '../components/User/Main';
 import ExploreComponent from '../components/User/Explore';
 import ScheduleComponent from '../components/User/Schedule';
 import FavouriteComponent from '../components/User/Favourite';
+import EventDescriptionComponent from '../components/User/EventsDescription';
+
+
 import Mycard from '../components/User/MyCard';
 import CreditcardComponent from '../components/User/CreditCard';
 
@@ -49,7 +52,6 @@ import BuyServicesComponent from '../components/User/BuyServices';
 import CheckoutComponent from '../components/User/Checkout';
 
 import PaymentMethodComponent from '../components/User/Payment';
-
 import PaymentCardComponent from '../components/User/PaymentCard'
 
 const Index = (
@@ -299,6 +301,12 @@ const Index = (
               component={MemberContainer}
               Layout={FavouriteComponent}
             />
+            <Scene
+              key="eventsdescription"
+              title="Stars Artistic"
+              component={MemberContainer}
+              Layout={EventDescriptionComponent}
+            />
           </Stack>
       <Tabs
         key="tabbar"
@@ -335,6 +343,12 @@ const Index = (
               title="Schedule"
               component={MemberContainer}
               Layout={ScheduleComponent}
+            />
+             <Scene
+              key="eventsdescription"
+              title="Stars Artistic"
+              component={MemberContainer}
+              Layout={EventDescriptionComponent}
             />
             </Stack>
         <Stack
