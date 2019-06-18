@@ -1,9 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {
-  Container, Content, Form, Item, Label, Input, Text, Button, View,
-} from 'native-base';
-
+import {Container, Content, Form, Item, Input, Text, View, Button} from 'native-base';
 import {Image, StyleSheet} from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import Messages from '../UI/Messages';
@@ -46,16 +43,15 @@ class Login extends React.Component {
       .then(() => setTimeout(() => Actions.pop(), 1000))
       .catch(() => {});
   }
-
   render() {
     const { loading, error, success } = this.props;
     const { email } = this.state;
 
     return (
       <Container>
-         <View style ={{backgroundColor:'#2eaaeb',flex:1, justifyContent: 'center',
-                alignItems: 'center',alignContent:'center', textAlign:'center'}}>
+         <View style ={styles.mainContainer}>
         <Content>
+          <View>
             <Spacer  size = {20}/>
             <Image style = {{alignSelf:'center'}} source ={require('../../../images/app-icon.png')} />
             <Spacer size={20} />
@@ -68,9 +64,9 @@ class Login extends React.Component {
               {success && <Messages type="success" message={success} />}
             </View>
             <Form>
-              <Item stackedLabel style={{width:'90%'}}>
+              <Item stackedLabel>
                 <Input
-                  style={{color:'#ffffff', textAlignVertical:'bottom'}}
+                  style={styles.inputField}
                   placeholderTextColor="#ffffff"
                   autoCapitalize="none"
                   placeholder = 'Username or E-mail'
@@ -80,9 +76,9 @@ class Login extends React.Component {
                   onChangeText={v => this.handleChange('email', v)}
                 />
               </Item>
-              <Item stackedLabel style={{width:'90%'}}  >
+              <Item stackedLabel >
                 <Input
-                  style={{color:'#ffffff', textAlignVertical:'bottom'}}
+                  style={styles.inputField}
                   placeholderTextColor="#ffffff"
                   secureTextEntry
                   placeholder = 'Password'
@@ -91,23 +87,36 @@ class Login extends React.Component {
                 />
                   <Text onPress={Actions.forgotPassword} style ={styles.labelForgetColor} >Forget Password?</Text>
               </Item>
-              
               <Spacer size={20} />
-              <View padder>
+              <View>
                 <Button block style ={styles.buttonStyle} onPress= {Actions.profile} disabled={loading}>
-                  <Text style={styles.loginButtonText}> {loading ? 'Loading' : 'Login' } </Text>
+                    <Text style={styles.loginButtonText} uppercase={false}> {loading ? 'Loading' : 'Login'} </Text>
                 </Button>
               </View>
             </Form>
+          </View> 
         </Content>
         </View>
       </Container>
     );
   }
 }
-
 const styles = StyleSheet.create({
 
+  mainContainer:{
+    backgroundColor:'#2eaaeb',
+    flex:1, 
+    justifyContent: 'center',
+    paddingRight:30,
+    paddingLeft:30
+  },
+  inputField:{
+    color:'#ffffff', 
+    textAlignVertical:'bottom',
+    fontSize:17,
+    lineHeight:22,
+    fontFamily:'SFPro_Text_Regular'
+  },
   labelColor:{
     color:'#ffffff'
   },
@@ -118,33 +127,39 @@ const styles = StyleSheet.create({
     position:'absolute',
     right:5,
     bottom:2,
-  },
-  titleText: {
-    fontSize: 20,
-    fontWeight: 'bold',
+    fontSize:12,
+    lineHeight:16,
+    fontFamily:'SFPro_Text_Regular'
   },
   welcomeText:{
-    fontSize:30,
+    fontSize:34,
+    lineHeight:41,
     textAlign: 'center',
     flex:1, 
     color:'white',
+    fontFamily:'SFProDisplay_Regular'
   },
   normalText:{
-    fontSize:12,
+    fontSize:16,
+    lineHeight:17,
     textAlign: 'center',
     flex:1, 
     color:'white',
+    fontFamily:'SFProDisplay_Light',
   },
   buttonStyle:{
     backgroundColor:'white',
     borderWidth:1,
     borderRadius:4,
-    borderColor:'#ffffff'
+    borderColor:'#ffffff',
   },
 
   loginButtonText:{
-    color:'#2eaaeb',
-    fontSize:12
+    color:'#00A6EF',
+    fontSize:20,
+    lineHeight:25,
+    fontFamily:'SFProDisplay_Light',
+    fontWeight:'300'
   }
 });
 

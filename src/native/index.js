@@ -21,16 +21,22 @@ export default class App extends React.Component {
     store: PropTypes.shape({}).isRequired,
     persistor: PropTypes.shape({}).isRequired,
   }
-
   state = { loading: true }
 
   async componentWillMount() {
     await Font.loadAsync({
       Roboto: require('native-base/Fonts/Roboto.ttf'),
       Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf'),
+      SFProDisplay_Light: require('../../assets/fonts/SFProDisplay_Light.ttf'),
+      SFProDisplay_Medium: require('../../assets/fonts/SFProDisplay_Medium.ttf'),
+      SFProDisplay_Regular: require('../../assets/fonts/SFProDisplay_Regular.ttf'),
+      SFPro_Text_Semibold: require('../../assets/fonts/SFPro_Text_Semibold.ttf'),
+      SFPro_Text_Medium: require('../../assets/fonts/SFPro_Text_Medium.ttf'),
+      SFPro_Text_Regular: require('../../assets/fonts/SFProText_Regular.ttf'),
+      SFPro_Text_Light: require('../../assets/fonts/SFProText_Light.ttf'),
       Ionicons: require('@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.ttf'),
+      
     });
-
     this.setState({ loading: false });
   }
 

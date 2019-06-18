@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import { View, StyleSheet, Image } from 'react-native';
+import { View, StyleSheet, Image, TouchableHighlight } from 'react-native';
 import { Container, Content, Button, Text } from 'native-base';
 import Carousel from 'react-native-snap-carousel';
 import { sliderWidth, sliderItemWidth} from './EventDescriptionSlider/Styles_slider';
@@ -7,6 +7,7 @@ import { classsliderWidth, classsliderItemWidth} from './EventDescriptionSlider/
 import SliderCarousel from './EventDescriptionSlider/Setting';
 import SliderCarousel1 from './EventDescriptionSlider/Setting1';
 import Spacer from '../UI/Spacer';
+import { Actions } from 'react-native-router-flux';
 
 
 class EventDescription extends Component {
@@ -150,9 +151,16 @@ class EventDescription extends Component {
         <View style = {styles.buttonView}>
           { (this.state.booking) ?
               (
-                <Button block style ={styles.buttonStyle} onPress = {this.BookingClickAction} >
-                  <Text>BOOKING NOW</Text>
-                </Button>
+                <View>
+                  <Button block style ={styles.buttonStyle} onPress = {this.BookingClickAction} >
+                    <Text>BOOKING NOW</Text>
+                  </Button>
+                  <View>
+                    <TouchableHighlight onPress = {Actions.bookmultiple} underlayColor="white" >
+                      <Text style = {styles.bookMultiple}>Book Multiple</Text>
+                    </TouchableHighlight>
+                  </View>
+                </View>
               )
             :
             (
@@ -283,6 +291,14 @@ const styles = StyleSheet.create({
     fontSize:17,
     lineHeight:22,
     color:'#FFFFFF'
+  },
+  bookMultiple:{
+    fontSize:12,
+    lineHeight:16,
+    textDecorationLine:'underline',
+    alignSelf:'flex-end',
+    marginTop:5,
+    color:'#565656'
   },
 });
 export default EventDescription;

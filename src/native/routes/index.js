@@ -35,6 +35,7 @@ import ExploreComponent from '../components/User/Explore';
 import ScheduleComponent from '../components/User/Schedule';
 import FavouriteComponent from '../components/User/Favourite';
 import EventDescriptionComponent from '../components/User/EventsDescription';
+import BookingMultipleComponent from '../components/User/BookMultiple';
 
 
 import Mycard from '../components/User/MyCard';
@@ -307,6 +308,12 @@ const Index = (
               component={MemberContainer}
               Layout={EventDescriptionComponent}
             />
+             <Scene
+              key="bookmultiple"
+              title="Stars Artistic"
+              component={MemberContainer}
+              Layout={BookingMultipleComponent}
+            />
           </Stack>
       <Tabs
         key="tabbar"
@@ -349,6 +356,12 @@ const Index = (
               title="Stars Artistic"
               component={MemberContainer}
               Layout={EventDescriptionComponent}
+            />
+            <Scene
+              key="bookmultiple"
+              title="Stars Artistic"
+              component={MemberContainer}
+              Layout={BookingMultipleComponent}
             />
             </Stack>
         <Stack

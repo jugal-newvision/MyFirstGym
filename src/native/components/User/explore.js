@@ -1,6 +1,6 @@
 import React, { Component }  from 'react';
 import { View, StyleSheet, Image } from 'react-native';
-import { Container, Content, List, ListItem, Body, Left, Text, Icon } from 'native-base';
+import { Text } from 'native-base';
 import Carousel from 'react-native-snap-carousel';
 import { sliderWidth, sliderItemWidth } from './ExploreSlider/Styles_slider';
 import SliderCarousel from './ExploreSlider/Setting';
